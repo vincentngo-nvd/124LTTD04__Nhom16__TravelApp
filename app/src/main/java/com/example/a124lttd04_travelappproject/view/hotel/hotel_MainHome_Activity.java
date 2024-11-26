@@ -70,12 +70,12 @@ public class hotel_MainHome_Activity extends AppCompatActivity {
         List<hotel_CategoryHotel2_Home_Model> hotelList = hotelDAO.getAllHotels();
 
         // Hoặc tạo dữ liệu mẫu (nếu không dùng database)
-        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3, "Hotel A", "1.000.000₫", R.drawable.five_stars));
-        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.hotel_2, "Hotel B", "1.200.000₫", R.drawable.five_stars));
-        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.hotel_3, "Hotel C", "950.000₫", R.drawable.five_stars));
-        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3, "Hotel D", "2.050.000₫", R.drawable.five_stars));
-        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3, "Hotel D", "2.050.000₫", R.drawable.five_stars));
-        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3, "Hotel D", "2.050.000₫", R.drawable.five_stars));
+        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3, "Hotel A", "1.000.000₫", R.drawable.rating));
+        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.hotel_2, "Hotel B", "1.200.000₫", R.drawable.rating));
+        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.hotel_3, "Hotel C", "950.000₫", R.drawable.rating));
+        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3, "Hotel D", "2.050.000₫", R.drawable.rating));
+        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3, "Hotel D", "2.050.000₫", R.drawable.rating));
+        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3, "Hotel D", "2.050.000₫", R.drawable.rating));
 
 
         // Bọc dữ liệu trong danh mục chính

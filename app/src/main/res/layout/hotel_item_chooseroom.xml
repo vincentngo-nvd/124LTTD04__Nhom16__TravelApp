@@ -40,9 +40,9 @@
 
             <ImageView
                 android:id="@+id/img_fiveStarChoose"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/five_stars">
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:src="@drawable/rating">
             </ImageView>
 
             <TextView

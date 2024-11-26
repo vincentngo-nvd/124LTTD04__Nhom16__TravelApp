@@ -73,7 +73,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="SGN - HAN\n1 thg 10 2024"
-                            android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="20dp"
                             android:textStyle="bold">
@@ -85,7 +84,9 @@
                         android:layout_width="360dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:background="@drawable/line_chonchuyenbay2"></LinearLayout>
+                        android:background="@drawable/line_chonchuyenbay2">
+
+                    </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"

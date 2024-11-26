@@ -73,7 +73,9 @@
                             android:text="SGN --> HAN\n1 thg 10 2024"
                             android:textColor="@color/black"
                             android:textSize="20dp"
-                            android:textStyle="bold"></TextView>
+                            android:textStyle="bold">
+
+                        </TextView>
                     </LinearLayout>
 
                     <LinearLayout

@@ -149,11 +149,11 @@ public class hotel_MainHotel_Activity extends AppCompatActivity {
 
     private List<hotel_ChooseHotel_Hotel_Model> getListChooseCategory() {
         List<hotel_ChooseHotel_Hotel_Model> list = new ArrayList<>();
-        list.add(new hotel_ChooseHotel_Hotel_Model(R.drawable.five_stars, R.drawable.hotel9, "Hương Xuân , Nha Trang .....", "Boutique Hotel Riverside Danang", "1.102.524 VND"));
-        list.add(new hotel_ChooseHotel_Hotel_Model(R.drawable.five_stars, R.drawable.hotel7, "Hương Xuân , Nha Trang .....", "Khách Sạn Mường Thanh Nha Trang", "1.102.524 VND"));
-        list.add(new hotel_ChooseHotel_Hotel_Model(R.drawable.five_stars, R.drawable.hotel8, "Hương Xuân , Nha Trang .....", "La Beach Hotel", "1.102.524 VND"));
-        list.add(new hotel_ChooseHotel_Hotel_Model(R.drawable.five_stars, R.drawable.hotel_4, "Hương Xuân , Nha Trang .....", "Mikazuki JAPANESE RESORTS & SPA", "1.102.524 VND"));
-        list.add(new hotel_ChooseHotel_Hotel_Model(R.drawable.five_stars, R.drawable.hotel9, "Hương Xuân , Nha Trang .....", "Khách sạn Grand Sunrise Boutique", "1.102.524 VND"));
+        list.add(new hotel_ChooseHotel_Hotel_Model(R.drawable.rating, R.drawable.hotel9, "Hương Xuân , Nha Trang .....", "Boutique Hotel Riverside Danang", "1.102.524 VND"));
+        list.add(new hotel_ChooseHotel_Hotel_Model(R.drawable.rating, R.drawable.hotel7, "Hương Xuân , Nha Trang .....", "Khách Sạn Mường Thanh Nha Trang", "1.102.524 VND"));
+        list.add(new hotel_ChooseHotel_Hotel_Model(R.drawable.rating, R.drawable.hotel8, "Hương Xuân , Nha Trang .....", "La Beach Hotel", "1.102.524 VND"));
+        list.add(new hotel_ChooseHotel_Hotel_Model(R.drawable.rating, R.drawable.hotel_4, "Hương Xuân , Nha Trang .....", "Mikazuki JAPANESE RESORTS & SPA", "1.102.524 VND"));
+        list.add(new hotel_ChooseHotel_Hotel_Model(R.drawable.rating, R.drawable.hotel9, "Hương Xuân , Nha Trang .....", "Khách sạn Grand Sunrise Boutique", "1.102.524 VND"));
 
         return list;
     }

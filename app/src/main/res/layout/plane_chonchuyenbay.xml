@@ -69,45 +69,36 @@
                 </TextView>
             </LinearLayout>
 
-            <LinearLayout
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@color/white">
+                android:background="@color/white"
+                app:tabIndicatorColor="#0026FF"
+                app:tabSelectedTextColor="#0026FF"
+                app:tabTextColor="#B0B0B0"
+                app:tabMode="fixed">
 
-                <com.google.android.material.button.MaterialButton
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tabFlight"
                     android:layout_width="135dp"
                     android:layout_height="wrap_content"
-                    android:text="Chuyến bay"
-                    android:textSize="11dp"
-                    android:background="@color/white"
-                    android:textColor="#FFFFFF"
-                    style="@style/CustomButtonNoRadiusStyle">
-                </com.google.android.material.button.MaterialButton>
+                    android:text="Chuyến bay" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="140dp"
-                    android:layout_height="wrap_content"
-                    android:text="Lợi ích đi kèm"
-                    android:textSize="11dp"
-                    android:background="@color/white"
-                    android:textColor="#FFFFFF"
-                    style="@style/CustomButtonNoRadiusStyle">
-
-                </com.google.android.material.button.MaterialButton>
-
-                <com.google.android.material.button.MaterialButton
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tabBenefits"
                     android:layout_width="135dp"
                     android:layout_height="wrap_content"
-                    android:text="Đổi lịch bay"
-                    android:background="@color/white"
-                    android:textColor="#FFFFFF"
-                    style="@style/CustomButtonNoRadiusStyle"
-                    android:textSize="11dp">
-                </com.google.android.material.button.MaterialButton>
-            </LinearLayout>
+                    android:text="Lợi ích đi kèm" />
 
-            <LinearLayout
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tabScheduleChange"
+                    android:layout_width="135dp"
+                    android:layout_height="wrap_content"
+                    android:text="Đổi lịch bay" />
+            </com.google.android.material.tabs.TabLayout>
+
+    <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:background="@drawable/bottom_edge"
@@ -424,14 +415,16 @@
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/xacnhangia"
+                        style="@style/CustomButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/button_vemaybay"
                         android:text="Chọn"
+                        android:layout_marginLeft="15dp"
                         android:textColor="@color/white"
-                        android:textStyle="bold"
                         android:textSize="16dp"
-                        style="@style/CustomButtonStyle">
+                        android:textStyle="bold">
+
                     </com.google.android.material.button.MaterialButton>
                 </LinearLayout>
 

@@ -70,59 +70,62 @@
                 android:orientation="vertical">
 
                 <!-- GridLayout for Spinners -->
-                <GridLayout
-                    android:id="@+id/grid_buttons"
+                <HorizontalScrollView
+                    android:id="@+id/horizontal_scrollview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:columnCount="2"
-                    android:rowCount="2">
+                    android:layout_marginBottom="20dp">
 
-                    <!-- Giá Spinner -->
-                    <Spinner
-                        android:id="@+id/spinner_gia"
-                        android:layout_width="0dp"
+                    <LinearLayout
+                        android:id="@+id/linear_buttons"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/search_box_bg"
-                        android:entries="@array/gia_options"
-                        android:padding="10dp" />
+                        android:orientation="horizontal"
+                        android:padding="10dp">
 
-                    <!-- Thành phố Spinner -->
-                    <Spinner
-                        android:id="@+id/spinner_thanhpho"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/search_box_bg"
-                        android:entries="@array/thanhpho_options"
-                        android:padding="10dp" />
+                        <!-- Giá Spinner -->
+                        <Spinner
+                            android:id="@+id/spinner_gia"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/search_box_bg"
+                            android:entries="@array/gia_options"
+                            android:padding="10dp" />
 
-                    <!-- Danh mục Spinner -->
-                    <Spinner
-                        android:id="@+id/spinner_danhmuc"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/search_box_bg"
-                        android:entries="@array/danhmuc_options"
-                        android:padding="10dp"/>
+                        <!-- Thành phố Spinner -->
+                        <Spinner
+                            android:id="@+id/spinner_thanhpho"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/search_box_bg"
+                            android:entries="@array/thanhpho_options"
+                            android:padding="10dp" />
 
-                    <!-- Số lượng Spinner -->
-                    <Spinner
-                        android:id="@+id/spinner_soluong"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_columnWeight="1"
-                        android:layout_margin="10dp"
-                        android:background="@drawable/search_box_bg"
-                        android:entries="@array/soluong_options"
-                        android:padding="10dp"/>
+                        <!-- Danh mục Spinner -->
+                        <Spinner
+                            android:id="@+id/spinner_danhmuc"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/search_box_bg"
+                            android:entries="@array/danhmuc_options"
+                            android:padding="10dp" />
 
-                </GridLayout>
+                        <!-- Số lượng Spinner -->
+                        <Spinner
+                            android:id="@+id/spinner_soluong"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/search_box_bg"
+                            android:entries="@array/soluong_options"
+                            android:padding="10dp" />
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+
 
                 <TextView
                     android:layout_width="match_parent"
@@ -131,7 +134,7 @@
                     android:text="Có Thể Bạn Sẽ Thích"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:textStyle="normal" />
+                    android:textStyle="bold" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/horizontal_recyclerview"
@@ -151,7 +154,7 @@
                     android:text="Khám Phá"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    android:textStyle="normal" />
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:id="@+id/item_tour"

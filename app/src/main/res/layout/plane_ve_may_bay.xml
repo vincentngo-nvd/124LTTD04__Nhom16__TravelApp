@@ -418,47 +418,68 @@
                     </TextView>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                    <Button
-                        android:id="@+id/btnHN"
-                        android:layout_width="120dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="7dp"
-                        android:layout_marginRight="7dp"
-                        android:background="@drawable/button_maybay1"
-                        android:text="Hà Nội"
-                        android:textColor="@color/white"
-                        android:textStyle="bold">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                    </Button>
+                        <Button
+                            android:id="@+id/btnHN"
+                            android:layout_width="120dp"
+                            android:layout_height="40dp"
+                            android:layout_marginLeft="7dp"
+                            android:layout_marginRight="7dp"
+                            android:background="@drawable/button_maybay1"
+                            android:text="Hà Nội"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"/>
 
-                    <Button
-                        android:id="@+id/btnTPHCM"
-                        android:layout_width="120dp"
-                        android:layout_height="40dp"
-                        android:layout_marginRight="7dp"
-                        android:background="@drawable/button_maybay2"
-                        android:text="TP.HCM"
-                        android:textColor="#0063F8"
-                        android:textStyle="bold">
+                        <Button
+                            android:id="@+id/btnTPHCM"
+                            android:layout_width="120dp"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="7dp"
+                            android:background="@drawable/button_maybay2"
+                            android:text="TP.HCM"
+                            android:textColor="#0063F8"
+                            android:textStyle="bold"/>
 
-                    </Button>
+                        <Button
+                            android:id="@+id/btnDN"
+                            android:layout_width="120dp"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="7dp"
+                            android:background="@drawable/button_maybay2"
+                            android:text="Đà Nẵng"
+                            android:textColor="#0063F8"
+                            android:textStyle="bold"/>
 
-                    <Button
-                        android:id="@+id/btnDN"
-                        android:layout_width="120dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/button_maybay2"
-                        android:text="Đà Nẵng"
-                        android:textColor="#0063F8"
-                        android:textStyle="bold">
+                        <Button
+                            android:id="@+id/btnGL"
+                            android:layout_width="120dp"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="7dp"
+                            android:background="@drawable/button_maybay2"
+                            android:text="Gia Lai"
+                            android:textColor="#0063F8"
+                            android:textStyle="bold"/>
 
-                    </Button>
-                </LinearLayout>
+                        <Button
+                            android:id="@+id/btnHP"
+                            android:layout_width="120dp"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="7dp"
+                            android:background="@drawable/button_maybay2"
+                            android:text="Hải Phòng"
+                            android:textColor="#0063F8"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcv_category"
@@ -506,8 +527,14 @@
                         android:text="Bay quốc tế tiết kiệm !"
                         android:textColor="#3F51B5"
                         android:textSize="28dp"
-                        android:textStyle="bold"></TextView>
+                        android:textStyle="bold">
+
+                    </TextView>
                 </LinearLayout>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -524,7 +551,9 @@
                         android:background="@drawable/button_maybay1"
                         android:text="Bay ĐNA từ Hà Nội"
                         android:textColor="@color/white"
-                        android:textStyle="bold"></Button>
+                        android:textStyle="bold">
+
+                    </Button>
 
                     <Button
                         android:id="@+id/btndnahcm"
@@ -534,17 +563,46 @@
                         android:background="@drawable/button_maybay2"
                         android:text="Bay ĐNA từ TP.HCM"
                         android:textColor="#0063F8"
-                        android:textStyle="bold"></Button>
+                        android:textStyle="bold">
+
+                    </Button>
 
                     <Button
                         android:id="@+id/btndnadn"
                         android:layout_width="120dp"
                         android:layout_height="40dp"
+                        android:layout_marginRight="7dp"
                         android:background="@drawable/button_maybay2"
                         android:text="Bay ĐNA từ Đà Nẵng"
                         android:textColor="#0063F8"
-                        android:textStyle="bold"></Button>
+                        android:textStyle="bold">
+
+                    </Button>
+
+                    <Button
+                        android:id="@+id/btndnagl"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@drawable/button_maybay2"
+                        android:text="Bay ĐNA từ Gia Lai"
+                        android:textColor="#0063F8"
+                        android:textStyle="bold">
+                    </Button>
+
+                    <Button
+                        android:id="@+id/btndnahp"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="7dp"
+                        android:background="@drawable/button_maybay2"
+                        android:text="Bay ĐNA từ Hải Phòng"
+                        android:textColor="#0063F8"
+                        android:textStyle="bold">
+
+                    </Button>
                 </LinearLayout>
+                </HorizontalScrollView>
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcv_category1"
                     android:layout_width="match_parent"

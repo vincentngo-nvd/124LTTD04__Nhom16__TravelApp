@@ -117,47 +117,71 @@
                 android:textStyle="bold">
             </TextView>
 
-            <LinearLayout
+            <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
                 android:padding="5dp">
-                <Button
-                    android:id="@+id/btn"
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nha Trang"
-                    android:textColor="@color/white"
-                    android:backgroundTint="#0788FF">
+                    android:orientation="horizontal"
+                    android:gravity="center">
 
-                </Button>
-                <View
-                    android:layout_width="10dp"
-                    android:layout_height="0dp">
+                    <Button
+                        android:id="@+id/btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nha Trang"
+                        android:textColor="@color/white"
+                        android:backgroundTint="#0788FF"/>
 
-                </View>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Phú Quốc"
-                    android:textColor="@color/white"
-                    android:backgroundTint="#0788FF">
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="0dp"/>
 
-                </Button>
-                <View
-                    android:layout_width="10dp"
-                    android:layout_height="0dp">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phú Quốc"
+                        android:textColor="@color/white"
+                        android:backgroundTint="#0788FF"/>
 
-                </View>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Đà Nẵng"
-                    android:textColor="@color/white"
-                    android:backgroundTint="#0788FF">
-                </Button>
-            </LinearLayout>
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="0dp"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đà Nẵng"
+                        android:textColor="@color/white"
+                        android:backgroundTint="#0788FF"/>
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="0dp"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đà Lạt"
+                        android:textColor="@color/white"
+                        android:backgroundTint="#0788FF"/>
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="0dp"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hội An"
+                        android:textColor="@color/white"
+                        android:backgroundTint="#0788FF"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
             <LinearLayout
                 android:id="@+id/ln_chooseHotel"
                 android:layout_width="match_parent"

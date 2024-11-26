@@ -29,7 +29,7 @@ public class HotelDAO {
                 int image = cursor.getInt(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_IMAGE));
                 String price = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_PRICE));
 
-                hotelList.add(new hotel_CategoryHotel2_Home_Model(image, name, price, R.drawable.five_stars));
+                hotelList.add(new hotel_CategoryHotel2_Home_Model(image, name, price, R.drawable.rating));
             } while (cursor.moveToNext());
         }
         cursor.close();
