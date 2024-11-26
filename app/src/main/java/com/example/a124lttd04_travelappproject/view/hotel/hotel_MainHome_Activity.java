@@ -18,15 +18,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.a124lttd04_travelappproject.R;
-import com.example.a124lttd04_travelappproject.model.hotel.hotel_CategoryHotel1_Home_Model;
 import com.example.a124lttd04_travelappproject.adapter.hotel.hotel_Hotel2_Home_Adapter;
-import com.example.a124lttd04_travelappproject.model.hotel.hotel_CgrLocation1_Home_Model;
 import com.example.a124lttd04_travelappproject.adapter.hotel.hotel_CgrLocation_Adapter;
+import com.example.a124lttd04_travelappproject.database.HotelDAO;
+import com.example.a124lttd04_travelappproject.model.hotel.hotel_CategoryHotel1_Home_Model;
 import com.example.a124lttd04_travelappproject.model.hotel.hotel_CategoryHotel2_Home_Model;
+import com.example.a124lttd04_travelappproject.model.hotel.hotel_CgrLocation1_Home_Model;
 import com.example.a124lttd04_travelappproject.model.hotel.hotel_CgrLocation2_Home_Model;
 import com.example.a124lttd04_travelappproject.view.flight.plane_VeMayBay_Activity;
-import com.example.a124lttd04_travelappproject.view.tour.tour_DatVe_Activity;
-import com.example.a124lttd04_travelappproject.view.tour.tour_DatVe_ClickDatNgayKhiChuaChonVe_Activity;
 import com.example.a124lttd04_travelappproject.view.tour.tour_Tour_Activity;
 
 public class hotel_MainHome_Activity extends AppCompatActivity {
@@ -37,17 +36,19 @@ public class hotel_MainHome_Activity extends AppCompatActivity {
     private hotel_CgrLocation_Adapter cgrlocationAdapter;
 
     private ImageView imageView;
+    private HotelDAO hotelDAO;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.hotel_activity_main_home);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
 
         rcv_location = findViewById(R.id.rcv_location);
         rcv = findViewById(R.id.rcv_hotel);
@@ -55,23 +56,37 @@ public class hotel_MainHome_Activity extends AppCompatActivity {
         cgrAdapter = new hotel_Hotel2_Home_Adapter(this);
         cgrlocationAdapter = new hotel_CgrLocation_Adapter(this);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
-
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         rcv.setLayoutManager(linearLayoutManager);
 
-        LinearLayoutManager locationLayoutManager = new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
-       rcv_location.setLayoutManager(locationLayoutManager);
+        LinearLayoutManager locationLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
+        rcv_location.setLayoutManager(locationLayoutManager);
 
-
-       cgrlocationAdapter.setDataLocation(getListLocation());
+        cgrlocationAdapter.setDataLocation(getListLocation());
         rcv_location.setAdapter(cgrlocationAdapter);
 
+        // Tải dữ liệu từ database thông qua DAO
+        hotelDAO = new HotelDAO(this);
+        List<hotel_CategoryHotel2_Home_Model> hotelList = hotelDAO.getAllHotels();
 
-        cgrAdapter.setData(getListCategory());
+        // Hoặc tạo dữ liệu mẫu (nếu không dùng database)
+        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3, "Hotel A", "1.000.000₫", R.drawable.five_stars));
+        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.hotel_2, "Hotel B", "1.200.000₫", R.drawable.five_stars));
+        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.hotel_3, "Hotel C", "950.000₫", R.drawable.five_stars));
+        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3, "Hotel D", "2.050.000₫", R.drawable.five_stars));
+        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3, "Hotel D", "2.050.000₫", R.drawable.five_stars));
+        hotelList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3, "Hotel D", "2.050.000₫", R.drawable.five_stars));
+
+
+        // Bọc dữ liệu trong danh mục chính
+        List<hotel_CategoryHotel1_Home_Model> categoryList = new ArrayList<>();
+        categoryList.add(new hotel_CategoryHotel1_Home_Model("Khách sạn 5 sao hàng đầu", hotelList));
+
+        // Gán vào Adapter
+        cgrAdapter.setData(categoryList);
         rcv.setAdapter(cgrAdapter);
 
-
-        // Chuyen sang layout Khach San
+        // Chuyển sang layout Khách Sạn
         imageView = findViewById(R.id.hotel);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,44 +99,15 @@ public class hotel_MainHome_Activity extends AppCompatActivity {
         setupClickListeners();
     }
 
-    private List<hotel_CategoryHotel1_Home_Model> getListCategory(){
-        List<hotel_CategoryHotel1_Home_Model> list = new ArrayList<>();
-
-        List<hotel_CategoryHotel2_Home_Model> cardviewList = new ArrayList<>();
-
-        list.add(new hotel_CategoryHotel1_Home_Model("Khách sạn 5 sao hàng đầu",cardviewList));
-
-        cardviewList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3,"PITACHIDO hotel SAPA","1.050.000₫",R.drawable.five_stars));
-        cardviewList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.hotel_2,"Sunrise Airport Hotel","1.050.000₫",R.drawable.five_stars));
-        cardviewList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.hotel_3,"San Marino Boutique ","1.050.000₫",R.drawable.five_stars));
-
-        cardviewList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3,"PITACHIDO hotel SAPA","1.050.000₫",R.drawable.five_stars));
-        cardviewList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3,"Mường Thanh","1.050.000₫",R.drawable.five_stars));
-        cardviewList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3,"Mường Thanh","1.050.000₫",R.drawable.five_stars));
-
-
-        cardviewList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.a3,"PITACHIDO hotel SAPA","1.050.000₫",R.drawable.five_stars));
-        cardviewList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.hotel_2,"Sunrise Airport Hotel","1.050.000₫",R.drawable.five_stars));
-        cardviewList.add(new hotel_CategoryHotel2_Home_Model(R.drawable.hotel_3,"San Marino Boutique ","1.050.000₫",R.drawable.five_stars));
-
-
-
-        return list;
-
-    }
-
-    private List<hotel_CgrLocation2_Home_Model> getListLocation(){
+    private List<hotel_CgrLocation2_Home_Model> getListLocation() {
         List<hotel_CgrLocation2_Home_Model> listLocation = new ArrayList<>();
-
         List<hotel_CgrLocation1_Home_Model> locations = new ArrayList<>();
 
-        listLocation.add(new hotel_CgrLocation2_Home_Model("Điểm tham quan nổi bật",locations));
-
-        locations.add(new hotel_CgrLocation1_Home_Model(R.drawable.danang,"Đà Nẵng","30 địa điểm"));
-        locations.add(new hotel_CgrLocation1_Home_Model(R.drawable.nhatrang,"Nha Trang","20 địa điểm"));
-
-        locations.add(new hotel_CgrLocation1_Home_Model(R.drawable.phuquoc,"Phú Quốc","35 địa điểm"));
-        locations.add(new hotel_CgrLocation1_Home_Model(R.drawable.nhatrang,"Ninh Bình","15 địa điểm"));
+        listLocation.add(new hotel_CgrLocation2_Home_Model("Điểm tham quan nổi bật", locations));
+        locations.add(new hotel_CgrLocation1_Home_Model(R.drawable.danang, "Đà Nẵng", "30 địa điểm"));
+        locations.add(new hotel_CgrLocation1_Home_Model(R.drawable.nhatrang, "Nha Trang", "20 địa điểm"));
+        locations.add(new hotel_CgrLocation1_Home_Model(R.drawable.phuquoc, "Phú Quốc", "35 địa điểm"));
+        locations.add(new hotel_CgrLocation1_Home_Model(R.drawable.nhatrang, "Ninh Bình", "15 địa điểm"));
 
         return listLocation;
     }
@@ -157,7 +143,6 @@ public class hotel_MainHome_Activity extends AppCompatActivity {
         Intent intent = new Intent(hotel_MainHome_Activity.this, plane_VeMayBay_Activity.class);
         startActivity(intent);
     }
-
 
     private void openTourPageActivity() {
         Intent intent = new Intent(hotel_MainHome_Activity.this, tour_Tour_Activity.class);

@@ -33,11 +33,15 @@ public class tour_CoTheBanSeThich_Activity extends AppCompatActivity {
                     Intent intent = new Intent(tour_CoTheBanSeThich_Activity.this, hotel_MainHome_Activity.class);
                     startActivity(intent);
                     return true;
-                } else if (item.getItemId() == R.id.action_hotel) {
+                }
+
+                else if (item.getItemId() == R.id.action_hotel) {
                     Intent intent = new Intent(tour_CoTheBanSeThich_Activity.this, hotel_MainHotel_Activity.class);
                     startActivity(intent);
                     return true;
-                } else if (item.getItemId() == R.id.action_plane) {
+                }
+
+                else if (item.getItemId() == R.id.action_plane) {
                     Intent intent = new Intent(tour_CoTheBanSeThich_Activity.this, plane_VeMayBay_Activity.class);
                     startActivity(intent);
                     return true;

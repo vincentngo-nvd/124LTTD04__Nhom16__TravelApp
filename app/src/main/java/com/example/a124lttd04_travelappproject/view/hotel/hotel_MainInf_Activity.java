@@ -37,12 +37,11 @@ public class hotel_MainInf_Activity extends AppCompatActivity {
 
     private Spinner spinner;
     private hotel_CategoryPay_Adapter categoryPayAdapter;
-
     private EditText checkInput;
     private EditText checkOutput;
-
     private MaterialButton button;
     private ImageView img;
+
     @Override
     public Intent registerReceiver(@Nullable BroadcastReceiver receiver, IntentFilter filter) {
         return super.registerReceiver(receiver, filter);
@@ -75,7 +74,9 @@ public class hotel_MainInf_Activity extends AppCompatActivity {
                 } else if (item.getItemId() == R.id.action_hotel) {
                     // Nếu là mục Hotel (hoặc hiện tại là Hotel), không cần chuyển activity
                     return true;
-                } else if (item.getItemId() == R.id.action_plane) {
+                }
+
+                else if (item.getItemId() == R.id.action_plane) {
                     Intent intent = new Intent(hotel_MainInf_Activity.this, plane_VeMayBay_Activity.class);
                     startActivity(intent);
                     return true;
@@ -92,10 +93,10 @@ public class hotel_MainInf_Activity extends AppCompatActivity {
 
         //Spinner
         spinner = findViewById(R.id.spn_room);
-        categoryPayAdapter = new hotel_CategoryPay_Adapter(this,R.layout.hotel_item_selected_pay1,getListCategoryPay());
+        categoryPayAdapter = new hotel_CategoryPay_Adapter(this, R.layout.hotel_item_selected_pay1, getListCategoryPay());
         spinner.setAdapter(categoryPayAdapter);
 
-        //EditText:check_in,check_out
+        //EditText: check_in, check_out
         checkInput = findViewById(R.id.editText_check_in);
         checkOutput = findViewById(R.id.editText_check_out);
 
@@ -105,9 +106,9 @@ public class hotel_MainInf_Activity extends AppCompatActivity {
                 showDateDialog(checkInput);
             }
 
-
             private void showDateDialog(final EditText checkIn) {
                 Calendar calendar = Calendar.getInstance();
+
                 DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -121,11 +122,13 @@ public class hotel_MainInf_Activity extends AppCompatActivity {
                 new DatePickerDialog(hotel_MainInf_Activity.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+
         checkOutput.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 showDateDialog(checkOutput);
             }
+
             private void showDateDialog(final EditText checkIn) {
                 Calendar calendar = Calendar.getInstance();
                 DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
@@ -142,7 +145,7 @@ public class hotel_MainInf_Activity extends AppCompatActivity {
             }
         });
 
-        // button
+        // Button
         button = findViewById(R.id.btn_pay);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,6 +154,7 @@ public class hotel_MainInf_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         img = findViewById(R.id.img_back_Inf);
         img.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,10 +163,9 @@ public class hotel_MainInf_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
-    private List<hotel_Location_Adapter.model_CategoryPay> getListCategoryPay(){
+    private List<hotel_Location_Adapter.model_CategoryPay> getListCategoryPay() {
         List<hotel_Location_Adapter.model_CategoryPay> list = new ArrayList<>();
         list.add(new hotel_Location_Adapter.model_CategoryPay("1 phòng"));
         list.add(new hotel_Location_Adapter.model_CategoryPay("2 phòng"));

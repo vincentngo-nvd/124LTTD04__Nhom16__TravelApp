@@ -6,13 +6,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
 import com.example.a124lttd04_travelappproject.R;
 import com.example.a124lttd04_travelappproject.view.tour.tour_DatVe_ThanhToan_Activity;
 import com.example.a124lttd04_travelappproject.view.tour.tour_ThanhToanThanhCong_Activity;
@@ -41,7 +39,9 @@ public class hotel_MainActivityPay_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Voucher=findViewById(R.id.voucher);Voucher.setOnClickListener(new View.OnClickListener() {
+
+        Voucher = findViewById(R.id.voucher);
+        Voucher.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent m = new Intent(hotel_MainActivityPay_Activity.this, hotel_Voucher.class); // Kiểm tra lớp đích

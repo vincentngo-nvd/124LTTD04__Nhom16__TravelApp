@@ -58,10 +58,8 @@ public class Taikhoan extends AppCompatActivity {
                     Intent planeIntent = new Intent(Taikhoan.this, plane_VeMayBay_Activity.class);
                     startActivity(planeIntent);
                     return true;
-                }
-
-                else if (item.getItemId() == R.id.action_tour) {
-                    // Chuyển đến SettingActivity (nếu có)
+                } else if (item.getItemId() == R.id.action_tour) {
+                    // Chuyển đến SettingActivity
                     Intent settingIntent = new Intent(Taikhoan.this, Taikhoan.class);
                     startActivity(settingIntent);
                     return true;

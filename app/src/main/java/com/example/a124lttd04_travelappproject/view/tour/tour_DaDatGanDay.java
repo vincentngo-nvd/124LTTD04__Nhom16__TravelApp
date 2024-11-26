@@ -22,7 +22,7 @@ import com.example.a124lttd04_travelappproject.view.hotel.hotel_MainHome_Activit
 import com.example.a124lttd04_travelappproject.view.hotel.hotel_MainHotel_Activity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class tour_DaDatGanDay extends AppCompatActivity  {
+public class tour_DaDatGanDay extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +41,6 @@ public class tour_DaDatGanDay extends AppCompatActivity  {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-                // Sử dụng if-else thay vì switch
                 if (item.getItemId() == R.id.action_home) {
                     // Chuyển đến HotelMainHomeActivity
                     Intent homeIntent = new Intent(tour_DaDatGanDay.this, hotel_MainHome_Activity.class);
@@ -57,10 +56,8 @@ public class tour_DaDatGanDay extends AppCompatActivity  {
                     Intent planeIntent = new Intent(tour_DaDatGanDay.this, plane_VeMayBay_Activity.class);
                     startActivity(planeIntent);
                     return true;
-                }
-
-                else if (item.getItemId() == R.id.action_tour) {
-                    // Chuyển đến SettingActivity (nếu có)
+                } else if (item.getItemId() == R.id.action_tour) {
+                    // Chuyển đến SettingActivity
                     Intent settingIntent = new Intent(tour_DaDatGanDay.this, Taikhoan.class);
                     startActivity(settingIntent);
                     return true;

@@ -31,11 +31,10 @@ public class hotel_MainRoom_Activity extends AppCompatActivity {
 
     private hotel_Category_Adapter categoryAdapter;
     private Spinner spinner;
-
     private RecyclerView recyclerView;
     private hotel_CgrChooseRoomAdapter_Room chooseRoomAdapter;
-
     private ImageView imageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,10 +48,8 @@ public class hotel_MainRoom_Activity extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav);
 
-        // Đặt mục action_hotel là mặc định
         bottomNavigationView.setSelectedItemId(R.id.action_hotel);
 
-        // Xử lý sự kiện nhấn trên từng mục
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
@@ -60,10 +57,14 @@ public class hotel_MainRoom_Activity extends AppCompatActivity {
                     Intent intent = new Intent(hotel_MainRoom_Activity.this, hotel_MainHome_Activity.class);
                     startActivity(intent);
                     return true;
-                } else if (item.getItemId() == R.id.action_hotel) {
+                }
+
+                else if (item.getItemId() == R.id.action_hotel) {
                     // Nếu là mục Hotel (hoặc hiện tại là Hotel), không cần chuyển activity
                     return true;
-                } else if (item.getItemId() == R.id.action_plane) {
+                }
+
+                else if (item.getItemId() == R.id.action_plane) {
                     Intent intent = new Intent(hotel_MainRoom_Activity.this, plane_VeMayBay_Activity.class);
                     startActivity(intent);
                     return true;
@@ -80,13 +81,13 @@ public class hotel_MainRoom_Activity extends AppCompatActivity {
 
         //Spinner
         spinner = findViewById(R.id.spn_selectedPerson);
-        categoryAdapter = new hotel_Category_Adapter(this,R.layout.hotel_item_searchhotel,getListCategory());
+        categoryAdapter = new hotel_Category_Adapter(this, R.layout.hotel_item_searchhotel, getListCategory());
         spinner.setAdapter(categoryAdapter);
 
         //Recycleview
         recyclerView = findViewById(R.id.rcv_chooseRoom);
         chooseRoomAdapter = new hotel_CgrChooseRoomAdapter_Room(this);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,RecyclerView.VERTICAL,false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, RecyclerView.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
         chooseRoomAdapter.setData(getListRoomCategory());
         recyclerView.setAdapter(chooseRoomAdapter);
@@ -103,32 +104,31 @@ public class hotel_MainRoom_Activity extends AppCompatActivity {
 
     }
 
-    private List<hotel_Category_Model> getListCategory(){
+    private List<hotel_Category_Model> getListCategory() {
         List<hotel_Category_Model> list = new ArrayList<>();
         list.add(new hotel_Category_Model("1 người"));
         list.add(new hotel_Category_Model("2 người"));
         list.add(new hotel_Category_Model("3 người"));
         list.add(new hotel_Category_Model("4 người"));
 
-
         return list;
     }
 
-    private List<hotel_CgrChooseRoom_Room_Model>getListRoomCategory(){
+    private List<hotel_CgrChooseRoom_Room_Model> getListRoomCategory() {
 
         List<hotel_CgrChooseRoom_Room_Model> list = new ArrayList<>();
 
-        list.add(new hotel_CgrChooseRoom_Room_Model(R.drawable.air_conditioner1,R.drawable.bed3,R.drawable.wifi1,R.drawable.room1,
-                "Máy lạnh","Phòng đôi Luxury","2 người ","925.555 VND","Wifi"));
-        list.add(new hotel_CgrChooseRoom_Room_Model(R.drawable.air_conditioner1,R.drawable.bed3,R.drawable.wifi1,R.drawable.room2,
-                "Máy lạnh","Phòng DELUXY","3 người ","1.102.524 VND","Wifi"));
-        list.add(new hotel_CgrChooseRoom_Room_Model(R.drawable.air_conditioner1,R.drawable.bed3,R.drawable.wifi1,R.drawable.room3,
-                "Máy lạnh","Phòng đôi COUPLE","2 người ","1.102.524 VND","Wifi"));
-        list.add(new hotel_CgrChooseRoom_Room_Model(R.drawable.air_conditioner1,R.drawable.bed3,R.drawable.wifi1,R.drawable.room4,
-                "Máy lạnh","Phòng đơn view biển","1 người ","1.102.524 VND","Wifi"));
-        list.add(new hotel_CgrChooseRoom_Room_Model(R.drawable.air_conditioner1,R.drawable.bed3,R.drawable.wifi1,R.drawable.room5,
-                "Máy lạnh","Phòng đôi view biển","2 người ","1.102.524 VND","Wifi"));
-        return  list;
+        list.add(new hotel_CgrChooseRoom_Room_Model(R.drawable.air_conditioner1, R.drawable.bed3, R.drawable.wifi1, R.drawable.room1,
+                "Máy lạnh", "Phòng đôi Luxury", "2 người ", "925.555 VND", "Wifi"));
+        list.add(new hotel_CgrChooseRoom_Room_Model(R.drawable.air_conditioner1, R.drawable.bed3, R.drawable.wifi1, R.drawable.room2,
+                "Máy lạnh", "Phòng DELUXY", "3 người ", "1.102.524 VND", "Wifi"));
+        list.add(new hotel_CgrChooseRoom_Room_Model(R.drawable.air_conditioner1, R.drawable.bed3, R.drawable.wifi1, R.drawable.room3,
+                "Máy lạnh", "Phòng đôi COUPLE", "2 người ", "1.102.524 VND", "Wifi"));
+        list.add(new hotel_CgrChooseRoom_Room_Model(R.drawable.air_conditioner1, R.drawable.bed3, R.drawable.wifi1, R.drawable.room4,
+                "Máy lạnh", "Phòng đơn view biển", "1 người ", "1.102.524 VND", "Wifi"));
+        list.add(new hotel_CgrChooseRoom_Room_Model(R.drawable.air_conditioner1, R.drawable.bed3, R.drawable.wifi1, R.drawable.room5,
+                "Máy lạnh", "Phòng đôi view biển", "2 người ", "1.102.524 VND", "Wifi"));
+        return list;
     }
 
 }

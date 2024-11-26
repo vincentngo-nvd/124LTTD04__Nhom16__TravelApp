@@ -18,6 +18,7 @@ import com.example.a124lttd04_travelappproject.view.tour.tour_ThanhToanThanhCong
 public class hotel_MainActivityAfterPay_ACtivity extends AppCompatActivity {
 
     private ImageView imageView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

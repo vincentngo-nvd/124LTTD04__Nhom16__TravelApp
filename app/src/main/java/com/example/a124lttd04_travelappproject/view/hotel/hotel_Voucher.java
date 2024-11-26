@@ -18,13 +18,13 @@ import com.example.a124lttd04_travelappproject.view.tour.tour_DatVe_SauThanhToan
 import com.example.a124lttd04_travelappproject.view.tour.tour_Voucher;
 
 public class hotel_Voucher extends AppCompatActivity {
-    boolean check=true;
+    boolean check = true;
     Button giamgia;
     Button xacnhan;
     TextView tongtien;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hotel_activity_voucher);
@@ -36,22 +36,22 @@ public class hotel_Voucher extends AppCompatActivity {
             return insets;
         });
 
-        giamgia=findViewById(R.id.applygiamgia);
-        tongtien=findViewById(R.id.TongTien);
-        xacnhan=findViewById(R.id.xacnhan);
+        giamgia = findViewById(R.id.applygiamgia);
+        tongtien = findViewById(R.id.TongTien);
+        xacnhan = findViewById(R.id.xacnhan);
         giamgia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(check==true){
+                if (check == true) {
                     tongtien.setText("1.573.528 VND (TCBDOMBAY)");
-                    check=false;
-                }
-                else {
+                    check = false;
+                } else {
                     tongtien.setText("1.773.528 VND");
-                    check=true;
+                    check = true;
                 }
             }
         });
+
         xacnhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
